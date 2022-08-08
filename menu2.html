@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        :root{
+            --very-light-pink: #c7c7c7;
+            --text-input-field: #f7f7f7;
+            --hospital-green: #acd9b2;
+            --white: #ffffff;
+            --black: #000000;
+            --sm: 14px;
+            --md: 16px;
+            --lg: 18px;
+        }
+        body{
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+        }
+        .mobile-menu{
+            height: 100vh;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+        }
+        .mobile-menu a{
+            text-decoration: none;
+            color: var(--black);
+            font-weight: bold;
+
+        }
+        .mobile-menu ul {
+            padding: 0;
+            margin: 24px 0;
+            list-style: none;
+        }
+        .mobile-menu ul li{
+            margin-bottom: 24px;
+        }
+        .mobile-menu .main ul:nth-child(1){
+            border-bottom: 1px solid var(--very-light-pink);
+        }
+        .mobile-menu .sign-out {
+            color: var(--hospital-green);
+            font-size: var(--sm);
+        }
+        .mobile-menu ul:last-child {
+             margin-bottom: 28px;
+        }
+        .mobile-menu div ul li {
+            margin-bottom: 32px;
+        }
+        .mobile-menu .email {
+            font-size: var(--sm);
+            font-weight: 300;
+            margin-bottom: 4px;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="mobile-menu">
+        <div> <!-- Este es el nuevo "div" -->
+          <ul>
+            <li><a href="/">CATEGORIES</a></li>
+            <li><a href="/">All</a></li>
+            <li><a href="/">Cloth</a></li>
+            <li><a href="/">Electronics</a></li>
+            <li><a href="/">Furniture</a></li>
+            <li><a href="/">Toys</a></li>
+            <li><a href="/">Others</a></li>
+          </ul>
+          <ul>
+            <li><a href="/">My orders</a></li>
+            <li><a href="/">My Account</a></li>
+          </ul>
+        </div> <!-- Cierre del nuevo div -->
+        <ul>
+          <li><a href="/" class="email">camilayokoo@gmail.com</a></li>
+          <li><a href="/" class="sign-out">Sign out</a></li>
+        </ul>
+      </div>
+</body>
+</html>
