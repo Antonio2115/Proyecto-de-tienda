@@ -30,6 +30,7 @@ nav{
 }
 .icon_menu {
     display: none;
+    cursor: pointer;
 }
 .logo{
     width: 100px;
@@ -124,11 +125,51 @@ nav{
     margin-bottom: 20px;
 }
 
+/*-----------------------------------Estilos de mobile-menu-----------------------------------------*/
+.mobile-menu{ 
+    position: absolute;
+    top: 60px;
+    height: 100vh;
+    padding: 24px;
+}
+.mobile-menu a{
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+
+}
+.mobile-menu ul {
+    padding: 0;
+    margin: 24px 0;
+    list-style: none;
+}
+.mobile-menu ul li{
+    margin-bottom: 24px;
+}
+.mobile-menu .main ul:nth-child(1){
+    border-bottom: 1px solid var(--very-light-pink);
+}
+.mobile-menu .sign-out {
+    color: var(--hospital-green);
+    font-size: var(--sm);
+}
+.mobile-menu ul:last-child {
+     margin-bottom: 28px;
+}
+.mobile-menu div ul li {
+    margin-bottom: 32px;
+}
+.mobile-menu .email {
+    font-size: var(--sm);
+    font-weight: 300;
+    margin-bottom: 4px;
+    display: inline-block;
+}
 
 
 @media (max-width: 640px){
     .icon_menu {
-        display: inline-block;
+        display: block;
         height: 35px;
         padding-top: 10px;
     }
@@ -138,4 +179,13 @@ nav{
     .navbar-email{
         display: none;
     }
+    .desktop-menu {
+        display: none;
+    }
 }
+
+@media (min-width: 641px) {
+    .mobile-menu {
+      display: none;
+    }
+  }
