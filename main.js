@@ -1,37 +1,48 @@
 const menuEmail = document.querySelector('.navbar-email');
 const desktopMenu = document.querySelector('.desktop-menu');
-
 const menuHamIcon = document.querySelector('.icon_menu');
 const mobileMenu = document.querySelector('.mobile-menu');
-
 const menuCarIcon  = document.querySelector('.navbar-shopping-cart');
 const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
-
 const cardsContainer = document.querySelector('.cards-container');
+const productDetailContainer = document.querySelector('#product-detail');
+const productDetailCloseIcon = document.querySelector('.product-detail-close');
 
 menuEmail.addEventListener('click',toggleDesktopMenu);
 menuHamIcon.addEventListener('click',toggleMobileMenu);
 menuCarIcon.addEventListener('click',toggleCarAside);
+productDetailCloseIcon.addEventListener('click',closeProductDetailAside);
 
-function toggleDesktopMenu() 
-{
+function toggleDesktopMenu() {
     mobileMenu.classList.add('inactive');
     shoppingCartContainer.classList.add('inactive');
     desktopMenu.classList.toggle('inactive');
+    productDetailContainer.classList.add('inactive')
 }
 
-function toggleMobileMenu()
-{
+function toggleMobileMenu(){
     desktopMenu.classList.add('inactive');
     shoppingCartContainer.classList.add('inactive');
     mobileMenu.classList.toggle('inactive');
+    productDetailContainer.classList.add('inactive')
 }
 
-function toggleCarAside()
-{
+function toggleCarAside(){
     desktopMenu.classList.add('inactive');
     mobileMenu.classList.add('inactive');
     shoppingCartContainer.classList.toggle('inactive');
+    productDetailContainer.classList.add('inactive')
+}
+
+function openProductDetailAside(){
+    productDetailContainer.classList.remove('inactive')
+    desktopMenu.classList.add('inactive');
+    mobileMenu.classList.add('inactive');
+    shoppingCartContainer.classList.add('inactive');
+}
+
+function closeProductDetailAside(){
+    productDetailContainer.classList.add('inactive')
 }
 const productList = [];
 productList.push({
@@ -90,6 +101,7 @@ productList.push ({
     price: 876,
     image: 'https://m.media-amazon.com/images/I/81k2Gmal+VL._AC_SL1500_.jpg'
 }); 
+
 function renderProducts(ArrayProducts){
     for(product of ArrayProducts){
         const productCard = document.createElement('div');
@@ -97,7 +109,9 @@ function renderProducts(ArrayProducts){
     
         const productImg = document.createElement('img');
         productImg.setAttribute('src', product.image);
-        
+        productImg.addEventListener('click', openProductDetailAside);
+        productImg.style.cursor = 'pointer';
+
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
     
