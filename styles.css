@@ -22,11 +22,16 @@ body{
 }
 /*-----------------------------------Estilos de Navbar-----------------------------------------*/
 nav{
-    display: flex;
-    border-bottom: 1px solid var(--very-light-pink);
-    justify-content: space-between;
-    padding: 0 24px;
-    height: 50px;
+  top: 0;
+  width: 100% ;
+  position: fixed;
+  display: flex;
+  border-bottom: 1px solid var(--very-light-pink);
+  background-color: var(--white);
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 50px;
+  z-index: 1;
 }
 .icon_menu {
     display: none;
@@ -130,9 +135,9 @@ nav{
 .mobile-menu{ 
   position: absolute;
   background-color: var(--white);
-  top: 61px;
+  top: 50px;
   left: 0;
-  width: calc(100% - 24px);
+  width: calc(100%);
   padding-left: 24px;
 }
 .mobile-menu a{
@@ -172,6 +177,7 @@ nav{
 /*-----------------------------------Estilos de Shopping-cart-----------------------------------------*/
 #shoppingCartContainer{
   padding: 14px 24px;
+  position: fixed;
 }
 aside {
   width: 360px;
@@ -179,6 +185,7 @@ aside {
   position: absolute;
   right: 0;
   background-color: var(--white);
+  top: 50px;
 }
 .title-container {
   display: flex;
@@ -255,7 +262,8 @@ aside {
   grid-template-columns: repeat(auto-fill, 240px);
   gap: 26px;
   place-content: center;
-  margin-top: 20px;
+  margin-top: 60px;
+  margin-bottom: 30px;
 }
 .product-card{
   width: 240px;
@@ -295,16 +303,20 @@ aside {
 }
 
 /*-----------------------------------Estilos de Product-detail-----------------------------------------*/
+#product-detail {
+  position: fixed;
+
+}
 #product-detail .product-detail-close {
   background: var(--white);
   width: 14px;
   height: 14px;
-  position: absolute;
   top: 24px;
   left: 24px;
   z-index: 2;
   padding: 12px;
   border-radius: 50%;
+  position: absolute;
 }
 #product-detail .product-detail-close:hover {
   cursor: pointer;
@@ -353,8 +365,16 @@ aside {
   justify-content: center;
 }
 
+/*-----------------------------------Estilos de Product-detail-----------------------------------------*/
+.menuBackground {
+  width: 100%;
+  height: calc(100%);
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-@media (max-width: 640px){
+@media (max-width: 645px){
     .icon_menu {
       display: block;
       height: 35px;
